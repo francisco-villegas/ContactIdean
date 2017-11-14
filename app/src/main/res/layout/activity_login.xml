@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.pancho.contactidean.Login">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_facebook"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="80dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#3b5998"
+            fancy:fb_focusColor="#5474b8"
+            fancy:fb_fontIconResource="&#xf082;"
+            fancy:fb_fontIconSize="35sp"
+            fancy:fb_iconPosition="left"
+            fancy:fb_radius="5dp"
+            fancy:fb_text="Login with Facebook"
+            fancy:fb_textColor="#FFFFFF"
+            fancy:fb_textSize="25sp"
+            fancy:layout_constraintLeft_toLeftOf="parent"
+            fancy:layout_constraintRight_toRightOf="parent"
+            fancy:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+        <ImageView
+            android:scaleType="fitCenter"
+            android:id="@+id/ivLogo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_account"
+            app:layout_constraintTop_toTopOf="@+id/guideline4"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+            android:layout_marginRight="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintRight_toLeftOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline4"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02208202" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.46" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
+

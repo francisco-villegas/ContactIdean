@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "591827799032",
+    "firebase_url": "https://contactidean.firebaseio.com",
+    "project_id": "contactidean",
+    "storage_bucket": "contactidean.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591827799032:android:1b8de81a0545e2d2",
+        "android_client_info": {
+          "package_name": "com.example.pancho.contactidean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591827799032-e554tk6tv3s5e65nobe0gd128u9mgc74.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pancho.contactidean",
+            "certificate_hash": "04202906d36bb90b63a33a298227d574071cc4f8"
+          }
+        },
+        {
+          "client_id": "591827799032-p5l5n3i0dmdqmavnqj3cqo2jffdodfqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAE_WudSEwXVPj_yAu2k4yOBtintkzNCM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591827799032-p5l5n3i0dmdqmavnqj3cqo2jffdodfqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
