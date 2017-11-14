@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pancho.contactidean.R;
+import com.example.pancho.contactidean.entities.User;
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -84,14 +85,15 @@ public class HomeView extends AppCompatActivity {
     }
 
     private void loadInfo() {
-        String img = mAuth.getCurrentUser().getPhotoUrl().toString();
-        String nombre = mAuth.getCurrentUser().getDisplayName();
-        String email = mAuth.getCurrentUser().getEmail();
-        String phone = mAuth.getCurrentUser().getPhoneNumber();
+        User user = getIntent().getParcelableExtra(getString(R.string.user));
+        String img = user.getImg_url().toString();
+        String name = user.getName();
+        String email = user.getEmail();
+        String phone = user.getPhone();
 
         Picasso.with(getApplicationContext()).load(img).into(ivProfileImage);
 
-        tvName.setText(nombre);
+        tvName.setText(name);
         tvEmail.setText(email);
         tvPhoneNumber.setText(phone);
     }

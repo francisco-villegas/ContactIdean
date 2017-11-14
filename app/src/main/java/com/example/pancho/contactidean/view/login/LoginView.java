@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.ndk.CrashlyticsNdk;
 import com.example.pancho.contactidean.R;
+import com.example.pancho.contactidean.entities.User;
 import com.example.pancho.contactidean.injection.login.DaggerLoginComponent;
 import com.example.pancho.contactidean.view.home.HomeView;
 import com.facebook.AccessToken;
@@ -60,6 +61,8 @@ public class LoginView extends AppCompatActivity {
     private void updateUI(FirebaseUser user) {
         if(user != null) {
             Intent intent = new Intent(this, HomeView.class);
+            User usere = new User(user.getPhotoUrl().toString(),user.getDisplayName(),user.getEmail(),user.getPhoneNumber());
+            intent.putExtra(getString(R.string.user),usere);
             startActivity(intent);
         }
     }
