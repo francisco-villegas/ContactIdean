@@ -5,9 +5,9 @@ import android.app.Application;
 import com.example.pancho.contactidean.entities.DaoSession;
 import com.example.pancho.contactidean.injection.app.AppModule;
 import com.example.pancho.contactidean.injection.app.DaggerAppComponent;
-import com.example.pancho.contactidean.injection.sharedpreference.DaggerSharedPreferencesComponent;
-import com.example.pancho.contactidean.injection.sharedpreference.SharedPreferencesComponent;
-import com.example.pancho.contactidean.injection.sharedpreference.SharedPreferencesModule;
+import com.example.pancho.contactidean.injection.sharedpreferences.DaggerSharedPreferencesComponent;
+import com.example.pancho.contactidean.injection.sharedpreferences.SharedPreferencesComponent;
+import com.example.pancho.contactidean.injection.sharedpreferences.SharedPreferencesModule;
 
 import javax.inject.Inject;
 

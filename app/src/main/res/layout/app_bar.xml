@@ -15,7 +15,20 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/gradient_background"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <com.varunest.sparkbutton.SparkButton
+                android:id="@+id/hearth_button"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:sparkbutton_activeImage="@drawable/ic_heart_on"
+                app:sparkbutton_inActiveImage="@drawable/ic_heart_off"
+                app:sparkbutton_iconSize="30dp"
+                app:sparkbutton_primaryColor="@color/bootstrap_brand_danger"
+                app:sparkbutton_secondaryColor="@color/bootstrap_brand_warning"
+                tools:ignore="RtlHardcoded" />
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 

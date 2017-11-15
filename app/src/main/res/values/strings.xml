@@ -4,4 +4,11 @@
     <string name="facebook_app_id">137408870353355</string>
     <string name="fb_login_protocol_scheme">fb137408870353355</string>
     <string name="user">User</string>
+
+    <string name="t1">1232</string>
+    <string name="t2">3212213</string>
+    <string name="t3">3212213</string>
+    <string name="fetch_user">Fetch user</string>
+    <string name="log_out">Log out</string>
+    <string name="browse_local">Browse local</string>
 </resources>

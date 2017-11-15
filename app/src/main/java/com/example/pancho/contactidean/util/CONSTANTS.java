@@ -9,4 +9,8 @@ public class CONSTANTS {
     //To call this CONSTANTS.constant_example;
 
     public static final String DB_NAME = "contacts.db";
+
+    public static final String BASE_URL = "https://randomuser.me";
+
+    public static final String PATH = "/api/";
 }

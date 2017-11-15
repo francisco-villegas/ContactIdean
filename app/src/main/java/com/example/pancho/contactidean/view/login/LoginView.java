@@ -23,6 +23,7 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
@@ -42,11 +43,15 @@ public class LoginView extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "LoginView";
 
+    private FirebaseAnalytics mFirebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
         setContentView(R.layout.activity_login);
+
+        setTitle("Login");
 
         setupDaggerComponent();
 
@@ -56,15 +61,27 @@ public class LoginView extends AppCompatActivity {
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         FacebookAuth();
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
     }
 
     private void updateUI(FirebaseUser user) {
         if(user != null) {
+            pushNotification(user);
             Intent intent = new Intent(this, HomeView.class);
             User usere = new User(user.getPhotoUrl().toString(),user.getDisplayName(),user.getEmail(),user.getPhoneNumber());
             intent.putExtra(getString(R.string.user),usere);
             startActivity(intent);
         }
+    }
+
+    private void pushNotification(FirebaseUser user) {
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Authentication successful for " + user.getDisplayName());
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "string");
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 
     private void setupDaggerComponent() {
@@ -75,11 +92,7 @@ public class LoginView extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
         LoginButton loginButton = new LoginButton(this);
         loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_friends"));
-        // If using in a fragment
-//        loginButton.setFragment(this);
-        // Other app specific specialization
 
-        // Callback registration
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {

@@ -1,4 +1,4 @@
-package com.example.pancho.contactidean.injection.sharedpreference;
+package com.example.pancho.contactidean.injection.sharedpreferences;
 
 import android.app.Application;
 import android.content.SharedPreferences;

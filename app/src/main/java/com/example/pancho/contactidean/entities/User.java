@@ -41,6 +41,7 @@ public class User implements Parcelable{
 
     public User(String img_url, String name, String email,
                 String phone) {
+        this.index = null;
         this.img_url = img_url;
         this.name = name;
         this.email = email;
@@ -51,7 +52,7 @@ public class User implements Parcelable{
     public User() {
     }
 
-    protected User(Parcel in) {
+    public User(Parcel in) {
         if (in.readByte() == 0) {
             index = null;
         } else {

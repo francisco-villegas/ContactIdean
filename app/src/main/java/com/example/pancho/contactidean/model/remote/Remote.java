@@ -1,5 +1,14 @@
 package com.example.pancho.contactidean.model.remote;
 
+import com.example.pancho.contactidean.entities.RandomUser;
+
+import io.reactivex.Observable;
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.http.GET;
+
+import static com.example.pancho.contactidean.util.CONSTANTS.PATH;
+
 /**
  * Created by Francisco on 10/18/2017.
  */
@@ -16,24 +25,24 @@ public class Remote {
 
     /** Get remote data using retrofit call */
     //Receive user if we want to search a user here
-//    public void getSeatGeekCall(Retrofit retrofit, String query){
-//        IResponse iResponse = retrofit.create(IResponse.class);
-//        iremote.sendCall(iResponse.getSeatGeekdata(CLIENT_ID, CLIENT_SECRET, query));
-//    }
-//
-//    /** Get remote data using rxjava observable */
-//    public void getSeatGeekObs(Retrofit retrofit, String query){
-//        IResponse iResponse = retrofit.create(IResponse.class);
-//        iremote.sendObservable(iResponse.getSeatGeekObservable(CLIENT_ID, CLIENT_SECRET, query));
-//    }
+    public void getRandomUserCall(Retrofit retrofit){
+        IResponse iResponse = retrofit.create(IResponse.class);
+        iremote.sendCall(iResponse.getSeatGeekdata());
+    }
 
-//    public interface IResponse{
-//
-//        @GET(PATH)
-//        Call<SeatGeek> getSeatGeekdata(@Query(CLIENT_ID_WORD) String CLIENT_ID, @Query(CLIENT_SECRET_WORD) String CLIENT_SECRET, @Query(Q_WORD) String query);
-//
-//        @GET(PATH)
-//        Observable<SeatGeek> getSeatGeekObservable(@Query(CLIENT_ID_WORD) String CLIENT_ID, @Query(CLIENT_SECRET_WORD) String CLIENT_SECRET, @Query(Q_WORD) String query);
-//
-//    }
+    /** Get remote data using rxjava observable */
+    public void getRandomUserObs(Retrofit retrofit){
+        IResponse iResponse = retrofit.create(IResponse.class);
+        iremote.sendObservable(iResponse.getSeatGeekObservable());
+    }
+
+    public interface IResponse{
+
+        @GET(PATH)
+        Call<RandomUser> getSeatGeekdata();
+
+        @GET(PATH)
+        Observable<RandomUser> getSeatGeekObservable();
+
+    }
 }

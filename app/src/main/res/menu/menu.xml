@@ -4,13 +4,13 @@
 
     <item
         android:id="@+id/log_out"
-        android:title="Log out" />
+        android:title="@string/log_out" />
 
     <item
         android:id="@+id/fetch_user"
-        android:title="Fetch user" />
+        android:title="@string/fetch_user" />
 
     <item
         android:id="@+id/browse_local"
-        android:title="Browse local" />
+        android:title="@string/browse_local" />
 </menu>
